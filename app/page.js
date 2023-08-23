@@ -1,6 +1,6 @@
 "use client";
-import Image from "next/image";
 
+import Typewriter from "typewriter-effect";
 // components
 import ParticlesContainer from "../components/ParticlesContainer";
 import ProjectsBtn from "../components/ProjectsBtn";
@@ -10,11 +10,13 @@ import Avatar from "../components/Avatar";
 import { motion } from "framer-motion";
 
 // variants
-import { fadeIn } from "../variants";
+import { fadeIn } from "../helpers/variants";
+
+import { Bio } from "../helpers/constants";
 
 export default function Home() {
   return (
-    <div className="bg-primary/60 h-full">
+    <main className="bg-indigo-950 h-full">
       {/* text */}
       <div className="w-full h-full bg-gradient-to-r from-primary/10 via-black/30 to-black/10">
         <div className="text-center flex flex-col justify-center xl:pt-40 xl:text-left h-full container mx-auto">
@@ -26,8 +28,20 @@ export default function Home() {
             exit="hidden"
             className="h1"
           >
-            Transforming Ideas <br /> Into
-            <span className="text-accent">Digital Reality</span>
+            <div className="space-y-2">
+              <span className="text-4xl block">Hi, I am</span>
+              <span className="text-4xl block">{Bio.name}, and I am a</span>
+            </div>
+
+            <span className="text-accent text-3xl">
+              <Typewriter
+                options={{
+                  strings: Bio.roles,
+                  autoStart: true,
+                  loop: true,
+                }}
+              />
+            </span>
           </motion.h1>
           {/* subtitle */}
           <motion.p
@@ -37,9 +51,7 @@ export default function Home() {
             exit="hidden"
             className="max-w-sm xl:max-w-xl mx-auto xl:mx-0 mb-10 xl:mb-16"
           >
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque
-            nostrum quam reprehenderit vero, tenetur voluptatem nulla aut
-            aspernatur dolores ut.
+            <span className="text-primary text-xl"> {Bio.description} </span>
           </motion.p>
           {/* btn */}
           <div className="flex justify-center xl:hidden relative">
@@ -74,6 +86,6 @@ export default function Home() {
           <Avatar />
         </motion.div>
       </div>
-    </div>
+    </main>
   );
 }

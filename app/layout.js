@@ -16,6 +16,7 @@ import Nav from "../components/Nav";
 import Header from '../components/Header';
 import Transition from "../components/Transition";
 import TopLeftImg from '../components/TopLeftImg';
+import Toggle from './../components/Toggle';
 
 // framer motion
 import { AnimatePresence, motion } from "framer-motion";
@@ -29,17 +30,19 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
+        
         <AnimatePresence mode="wait">
           <motion.div className="h-full">
             <Transition />
-            <main
+            <div
               className={`page bg-site text-white bg-cover bg-no-repeat ${sora.variable} font-sora relative`}
             >
               <TopLeftImg/>
               <Nav />
+              <Toggle/>
               <Header/>
               {children}
-            </main>
+            </div>
           </motion.div>
         </AnimatePresence>
       </body>
