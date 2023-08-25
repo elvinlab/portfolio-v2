@@ -1,13 +1,8 @@
-"use client"
-// icons
+"use client";
+
 import { BsArrowRight } from "react-icons/bs";
 
-// framer
-import { motion } from "framer-motion";
-
-// variants
 import { fadeIn } from "../../helpers/variants";
-
 const Contact = () => {
   return (
     <div className="h-full bg-primary/30">
@@ -15,7 +10,7 @@ const Contact = () => {
         {/* text & form */}
         <div className="flex flex-col w-full max-w-[700px]">
           {/* text */}
-          <motion.h2
+          <h2
             variants={fadeIn("up", 0.2)}
             initial="hidden"
             animate="show"
@@ -23,9 +18,9 @@ const Contact = () => {
             className="h2 text-center mb-12"
           >
             Let's <span className="text-accent">connect.</span>
-          </motion.h2>
+          </h2>
           {/* form */}
-          <motion.form
+          <form
             variants={fadeIn("up", 0.4)}
             initial="hidden"
             animate="show"
@@ -45,7 +40,7 @@ const Contact = () => {
               </span>
               <BsArrowRight className="-translate-y-[120%] opacity-0 group-hover:flex group-hover:-translate-y-0 group-hover:opacity-100 transition-all duration-300 absolute text-[22px]" />
             </button>
-          </motion.form>
+          </form>
         </div>
       </div>
     </div>

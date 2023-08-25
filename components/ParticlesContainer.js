@@ -4,7 +4,6 @@ import { Particles } from "react-tsparticles";
 import { loadFull } from "tsparticles";
 
 const ParticlesContainer = () => {
-    // init
   const particlesInit = useCallback(async (engine) => {
     await loadFull(engine);
   }, []);
@@ -23,7 +22,7 @@ const ParticlesContainer = () => {
             value: "",
           },
         },
-        fpsLimit: 120,
+        fpsLimit: 60,
         interactivity: {
           events: {
             onClick: {
@@ -48,12 +47,12 @@ const ParticlesContainer = () => {
         },
         particles: {
           color: {
-            value: ['c912ed', '00bfff', '22dd22', 'ffd500', 'ff8000', 'ff2600'],
+            value: ["c912ed", "00bfff", "22dd22", "ffd500", "ff8000", "ff2600"],
           },
           links: {
             enable: true,
             distance: 110,
-            color: '999',
+            color: "999",
             opacity: 0.9,
             width: 1,
             consent: false,

@@ -1,9 +1,7 @@
-import { DiCssdeck } from "react-icons/di";
+import { BsFillRocketTakeoffFill } from "react-icons/bs";
 
-// next link
 import Link from "next/link";
 
-// components
 import Socials from "../components/Socials";
 
 const Header = () => {
@@ -14,16 +12,10 @@ const Header = () => {
           {/* logo */}
           <Link
             href={"/"}
-            style={{
-              display: "flex",
-              alignItems: "center",
-              color: "white",
-              marginBottom: "20;",
-              cursor: "pointer",
-            }}
+            className="flex items-center text-white cursor-pointer"
           >
-            <DiCssdeck size="3rem" />
-            <span className="px-1 font-semibold text-xl">Portfolio</span>
+            <BsFillRocketTakeoffFill size="3rem" />
+            <span className="px-1 font-semibold text-3xl">Portfolio</span>
           </Link>
 
           {/* socials */}

@@ -1,33 +1,66 @@
-// links
-import Link from 'next/link';
+import Link from "next/link";
 
-// icons
+import { Bio } from "../helpers/constants";
+
 import {
   RiGithubFill,
   RiLinkedinFill,
-  RiSendPlaneFill,
   RiFacebookFill,
-  RiInstagramLine,
-  RiMailSendLine
-} from 'react-icons/ri';
+  RiInstagramFill,
+  RiMailSendFill,
+  RiTwitterFill,
+} from "react-icons/ri";
 
 const Socials = () => {
   return (
-    <div className='flex items-center gap-x-5 text-2xl'>
-      <Link href={''} className='hover:text-accent transition-all duration-300'>
+    <div className="flex items-center gap-x-5 text-3xl text-secondary">
+      <Link
+        target="_blank"
+        href={Bio.github}
+        className="hover:text-accent transition-all duration-300"
+        rel="noopener noreferrer"
+      >
         <RiGithubFill />
       </Link>
-      <Link href={''} className='hover:text-accent transition-all duration-300'>
+      <Link
+        target="_blank"
+        href={Bio.mail}
+        className="hover:text-accent transition-all duration-300"
+        rel="noopener noreferrer"
+      >
+        <RiMailSendFill />
+      </Link>
+      <Link
+        target="_blank"
+        href={Bio.linkedin}
+        className="hover:text-accent transition-all duration-300"
+        rel="noopener noreferrer"
+      >
         <RiLinkedinFill />
       </Link>
-      <Link href={''} className='hover:text-accent transition-all duration-300'>
-        <RiMailSendLine />
-      </Link>
-      <Link href={''} className='hover:text-accent transition-all duration-300'>
+      <Link
+        target="_blank"
+        href={Bio.facebook}
+        className="hover:text-accent transition-all duration-300"
+        rel="noopener noreferrer"
+      >
         <RiFacebookFill />
       </Link>
-      <Link href={''} className='hover:text-accent transition-all duration-300'>
-        <RiInstagramLine />
+      <Link
+        target="_blank"
+        href={Bio.instagram}
+        className="hover:text-accent transition-all duration-300"
+        rel="noopener noreferrer"
+      >
+        <RiInstagramFill />
+      </Link>
+      <Link
+        target="_blank"
+        href={Bio.twitter}
+        className="hover:text-accent transition-all duration-300"
+        rel="noopener noreferrer"
+      >
+        <RiTwitterFill />
       </Link>
     </div>
   );

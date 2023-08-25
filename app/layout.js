@@ -1,25 +1,22 @@
 "use client";
 
 import "./globals.css";
-// fonts
 import { Sora } from "next/font/google";
+import { usePathname } from "next/navigation";
 
-// font settings
 const sora = Sora({
   subsets: ["latin"],
   variable: "--font-sora",
   weight: ["100", "200", "300", "400", "500", "600", "700", "800"],
 });
 
-// components
 import Nav from "../components/Nav";
-import Header from '../components/Header';
-import Transition from "../components/Transition";
-import TopLeftImg from '../components/TopLeftImg';
-import Toggle from './../components/Toggle';
+import Header from "../components/Header";
+import TopLeftImg from "../components/TopLeftImg";
+import Toggle from "./../components/Toggle";
 
-// framer motion
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
+import Transition from "@/components/Transition";
 
 export const metadata = {
   title: "Create Next App",
@@ -27,24 +24,22 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+  const pathname = usePathname();
   return (
     <html lang="en">
-      <body>
-        
-        <AnimatePresence mode="wait">
-          <motion.div className="h-full">
+      <body suppressHydrationWarning={true}>
+        <div
+          className={`page bg-site text-white bg-cover bg-no-repeat ${sora.variable} font-sora relative`}
+        >
+          <motion.div key={pathname} className="h-full">
             <Transition />
-            <div
-              className={`page bg-site text-white bg-cover bg-no-repeat ${sora.variable} font-sora relative`}
-            >
-              <TopLeftImg/>
-              <Nav />
-              <Toggle/>
-              <Header/>
-              {children}
-            </div>
+            <TopLeftImg />
+            <Nav />
+            <Toggle />
+            <Header />
+            {children}
           </motion.div>
-        </AnimatePresence>
+        </div>
       </body>
     </html>
   );
